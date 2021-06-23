@@ -1,0 +1,6 @@
+1;Maci;6000;akcios;macik.jpg
+2;Kutya;4000;nem_akcios;kutyak.jpg
+3;Cica;3999;nem_akcios;cicak.jpg
+4;Nyuszi;7894;akcios;nyuszik.jpg
+5;Róka;500;nem_akcios;roka.jpg
+6;Egér;1539;akcios;mouse.jpg

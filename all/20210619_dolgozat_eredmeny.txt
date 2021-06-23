@@ -1,0 +1,11 @@
+Kovács Ádám;22;11;2
+Kis Zoltán;14;14;1
+Nagy Béla;24;8;3
+Szabó Tamás;14;4.67;3
+Kiss Olivér;29;9.67;3
+Szabó Péter;18;9;2
+Tamás Bence;16;8;2
+Kovács Ádám;3
+Kis Zoltán;2;3
+Szabó Péter;2
+Tamás Bence;2

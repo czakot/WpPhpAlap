@@ -1,0 +1,7 @@
+Kovács Ádám;15;2
+Kis Zoltán;20;1
+Nagy Béla;16;3
+Szabó Tamás;27;4
+Kiss Olivér;30;5
+Szabó Péter;10;7
+Tamás Bence;13;6

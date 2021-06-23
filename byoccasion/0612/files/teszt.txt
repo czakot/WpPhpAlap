@@ -1,0 +1,3 @@
+ez egy teszt txt fájl
+ennek van egy második sora is
+a harmadik sor

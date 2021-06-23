@@ -1,0 +1,3 @@
+Kis Zoltán;40;3
+Kiss Olivér;100;5
+Kovács Ádám;65;4
