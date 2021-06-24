@@ -1,7 +1,7 @@
 <?php
 
 $elso_tomb = array('elso','második',3);
-//echo $elso_tomb;
+//echo $elso_tomb."<br>;
 //print_r($elso_tomb);
 
 $masodik_tomb =array();
@@ -14,7 +14,7 @@ $harmadiktomb[]='214';
 //print_r($harmadiktomb);
 
 $harmadiktomb = array('214');
-////print_r($harmadiktomb);
+//print_r($harmadiktomb);
 
 $masodik_tomb[] = 5;
 //print_r($masodik_tomb);
@@ -24,7 +24,7 @@ $negyedik[1]=0;
 $negyedik[2]=2;
 $negyedik[6]=6;
 $negyedik[4]=4;
-////print_r($negyedik);
+//print_r($negyedik);
 
 $negyedik[6]=5;
 //print_r($negyedik);

@@ -36,7 +36,6 @@ nagyobb_e(1,11);*/
     return $x;
 }
 echo novel_tizzel(5);
-
 $x=3;
 echo novel_tizzel($x).'<br>';
 echo $x;*/
@@ -48,10 +47,10 @@ echo $x;*/
 }*/
 
 //
-/*$x=10;
-function novel_tizzel2($szam) {
+$x=10;
+/*function novel_tizzel2($szam) {
     global $x;
-    
+
     $return =$szam+10;
     return $return;
 }
@@ -64,21 +63,21 @@ echo $y;*/
 }
 kiirat();*/
 
-/*
-kiirat2();
+
+/*kiirat2();
 function kiirat2() {
     echo 'teszt2';
-}
-*/
+}*/
+
 
 //kiirat2();
-/*$x=1;
+$x=1;
 if ($x==1) {
     function kiirat2() {
         echo 'teszt2';
     }
 }
-kiirat2();*/
+kiirat2();
 
 
 

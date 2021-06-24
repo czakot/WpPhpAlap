@@ -1,9 +1,9 @@
 <?php
 
+$v='ertek';
 $valtozo = 'string_var$v';
 //echo $valtozo;
 
-$v='ertek';
 $valtozo2 = "string_var$v";
 //echo $valtozo2;
 
@@ -89,45 +89,44 @@ $x--;*/
 $x=1;
 $y='1';
 if ($y==$x) {
-  //echo 'egyenlő';  
+//  echo 'egyenlő';
 } else {
-   // echo 'nem egyenlő';  
+//    echo 'nem egyenlő';
 }
 
 //===
 $x=1;
 $y='1';
 if ($y===$x) {
-  //echo 'egyenlő';  
+//  echo 'egyenlő';
 } else {
-    //echo 'nem egyenlő';  
+//    echo 'nem egyenlő';
 }
 
 //!=
 $x=1;
 $y=3;
 if ($y!=$x) {
-  //echo 'nem egyenlő';  
+//  echo 'nem egyenlő';
 } else {
-    //echo 'egyenlő';  
+//    echo 'egyenlő';
 }
 
 $x=1;
 $y=3;
 if ($y<>$x) {
-  //echo 'nem egyenlő';  
+//  echo 'nem egyenlő';
 } else {
-    //echo 'egyenlő';  
+//    echo 'egyenlő';
 }
 
 $x=1;
 $y='1';
 if ($y!==$x) {
-  //echo 'nem egyenlő';  
+//  echo 'nem egyenlő';
 } else {
-   // echo 'egyenlő';  
+//    echo 'egyenlő';
 }
-
 
 $x=6;
 $y=3;

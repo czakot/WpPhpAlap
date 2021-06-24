@@ -11,9 +11,8 @@
 </body>
 </html>
 
+
 <?php
-
-
 
 $user=$_POST['name'];
 
