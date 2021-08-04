@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<termekek>
+	<termek>
+		<nev>Videó magnó</nev>
+		<cikkszam>T2021-0030</cikkszam>
+		<mertekegysegid>1</mertekegysegid>
+	</termek>
+	<termek>
+		<nev>Walkman</nev>
+		<cikkszam>T2021-0031</cikkszam>
+		<mertekegysegid>2</mertekegysegid>
+	</termek>
+	<termek>
+		<nev>Diskman</nev>
+		<cikkszam>T2021-0032</cikkszam>
+		<mertekegysegid>2</mertekegysegid>
+	</termek>
+	<termek>
+		<nev>MP3 lejátszó</nev>
+		<cikkszam>T2021-0033</cikkszam>
+		<mertekegysegid>1</mertekegysegid>
+	</termek>
+</termekek>

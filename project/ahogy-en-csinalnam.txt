@@ -1,0 +1,7 @@
+1. raktáras menüben a funkciókat megcsinálnám teljesen
+2. termék listát megcsinálnám úgy hogy a raktár tételes részét kihagyom
+3. termék felvitelt, importot megcsinálnám
+4. raktár tétel hozzáadás
+5. raktár tétel listázás és törlés
+6. raktár tétel módosítás
+7. termék listában a raktár tétel összegzés

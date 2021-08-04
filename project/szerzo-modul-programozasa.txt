@@ -1,0 +1,34 @@
+1. szerzo.php - új mentés
+	osztály file include
+	példányosítás
+	event-es if
+	$params tömb feltöltése az adatokkal a $_POST-ból
+	példányon keresztül a save metódus meghívása
+	
+	authors osztályban a save metódus megírása
+	benne az if hogyha id > 0 akkor módosítás különben újként mentés
+	összerakjuk az sql query-t
+	futtatjuk a $this->connection-ön keresztül
+	
+2. szerzok.php - listázás
+	authors osztály include és példányosítás
+	osztályban a get_list metódus megírása order by paraméterrel együtt
+	szerzok.php-ban meghívjuk a get_list metódust és eltároljuk a kapott listát egy tömbben
+	a html-t belerakjuk egy foreachbe és az adatokat kicseréljük benne változóra
+	a módosító icon href-jébe belerakjuk: ?menu=szerzo&szerzo_id='.$authorItem["id"].'
+	a kuka iconba belerakjuk: ?menu=szerzok&torlendo_szerzo_id='.$authorItem["id"].'
+	
+3. szerzok.php - törlés
+	a get_list metódus meghívása elé belerakjuk hogyha létezik a $_GET["torlendo_szerzo_id"] és nagyobb 0
+	akkor meghívunk egy delete metódust az authors osztályból
+	megírjuk a delete metódust az osztályban.
+
+4. szerzo.php - módosítás
+	a mentés alá amit az előbb írtunk berakunk egy load_item_by_id metódus hívát ha van $_GET["szerzo_id"]
+	elrakjuk egy változóba a kapott tömböt.
+	megírjuk a load_item_by_id metódust az osztályban.
+	a html-be berakjuk az inputokban a value attribútumba az értékeket.
+	
+	a save metódus hívás elé a params tömböt kiegészítjük egy féltétellel, hogy van $_GET["szerzo_id"] akkor az id ez legyen, ha nincs akkor 0
+	megírjuk a save metódusban az UPDATE query-t is.
+	

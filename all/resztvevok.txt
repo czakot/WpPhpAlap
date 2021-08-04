@@ -1,0 +1,10 @@
+Bognár Balázs;A;10
+Egyed Áron;B;12
+Török Kristóf;A;13
+Kende Pál;C;12
+Halász Árpád;B;15
+Virág László;A;18
+Boros Imre;C;10
+Szabó Roland;A;22
+Nemes Csanád;A;10
+Bacs Márkó;A;14
