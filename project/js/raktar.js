@@ -1,6 +1,5 @@
 function get_list(){
     const filter = $('#filter_name').val();
-
     $.ajax({
         type: "POST",
         url: "includes/ajax/raktarlista.php",
@@ -20,13 +19,10 @@ function get_list(){
 }
 
 function closePopup(){
-    event.preventDefault();
     $('#popup-form').hide(200);
 }
 
 function save(){
-    event.preventDefault();
-
     const azonosito = $('#popup_azonosito').val();
     const name = $('#popup_name').val();
     const id = $('#popup_id').val();
@@ -66,7 +62,7 @@ function modify(modifyId){
             if (data.success){
                 $('#popup_azonosito').val(data.azonosito);
                 $('#popup_name').val(data.name);
-                $('#popup_id').val(id);
+                $('#popup_id').val(modifyId);
                 $('#popup-form').show(200);
             }
         },
@@ -102,4 +98,4 @@ function newItem(){
 
 $(document).ready(function(){
     get_list();
-})
+});

@@ -19,16 +19,12 @@
             <input type="hidden" name="event" value="do_login">
 			<div>Felhasználónév</div>
 			<div>
-<!--todo remove loginname default values-->
-				<input type="text" id="loginname" name="loginname" value="admin">
-<!--				<input type="text" id="loginname" name="loginname" >-->
+				<input type="text" id="loginname" name="loginname">
 			</div>
-
+			
 			<div>Jelszó</div>
 			<div>
-<!--todo remove password default values-->
-				<input type="password" id="pwd" name="pwd" value="teszt">
-<!--				<input type="password" id="pwd" name="pwd">-->
+				<input type="password" id="pwd" name="pwd">
 			</div>
 			
 			<div></div>

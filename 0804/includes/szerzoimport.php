@@ -1,11 +1,7 @@
 <?php
-    //includold a termek osztályt és példányosítsd
-    include("../library/class.termek.php");
-    $termek = new raktar($connection);
-
-    //ellenőrizd hogy van e $_POST["event"]
-    if (isset($_POST["event"]) &&  $_POST["event"] == "do_import")) {
-        //a szerző import alapján írd meg az XML feldolgozást, a minta file-t a temp mappában megtalálod
+    include('library/class.authors.php');
+    $authors = new authors($connection);
+    if(isset($_POST["event"]) && $_POST["event"] == "do_import"){
         //echo $_FILES["importfile"]["tmp_name"];
         if(is_file($_FILES["importfile"]["tmp_name"])) {
             $xmlcontent = file_get_contents($_FILES["importfile"]["tmp_name"]);
@@ -22,21 +18,16 @@
         }
     }
 
-    if (isset($_POST["event"]) && $_POST["event"] == "cancel") {
-        header('location: ?menu=termeklista');
-    }
 ?>
-
-<h1>Termékimport</h1>
+<h1>Szerző import</h1>
 <br>
 <br>
 <form method="POST" action="" enctype="multipart/form-data">
-    <input type="hidden" name="event" id="event" value="do_import">
-    Importfájl: <input type="file" name="termekimportfile">
+    <input type="hidden" name="event" value="do_import">
+    Import XML: <input type="file" name="importfile">
     <br>
     <br>
     <br>
-    <button type="button" onclick="$('#event').val('cancel); submit();">Mégse</button>
-    <button type="submit">Mentés</button>
+    <button>Mentés</button>
 </form>
 

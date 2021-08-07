@@ -2,7 +2,8 @@
 <h1>Raktár</h1>
 <form action="?menu=raktarlista">
     Név: <input type="text" name="filter_name" id="filter_name">
-    <button onclick="javascript: get_list();">Szűrés</button>
+    <button type="button" onclick="javascript: get_list();">Szűrés</button>
+    <button type="button" onclick="$('#filter_name').val(''); get_list();">Szűrés törlése</button>
 </form>
 <a href="javascript: newItem();" title="Új raktár létrehozása"><i class="fas fa-edit"></i></a>
 
@@ -17,8 +18,8 @@
         <br>
         <br>
         <br>
-        <button onclick="javascipt: closePopup();">Bezárás</button>
-        <button onclick="javascipt: save();">Mentés</button>
+        <button type="button" onclick="javascript: closePopup();">Bezárás</button>
+        <button type="button" onclick="javascript: save();">Mentés</button>
     </form>
 </div>
 
