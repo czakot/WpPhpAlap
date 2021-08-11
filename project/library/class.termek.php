@@ -10,14 +10,8 @@ class termek
 
     public function get_list($params) {
         $sql = "SELECT * FROM termek";
-        $fname = isset($params["where_name"]) && strlen($params["where_name"]) > 0;
-        $fcsz = isset($params["where_cikkszam"]) && strlen($params["where_cikkszam"]) > 0;
-        if ($fname && $fcsz) {
-            $sql .= " WHERE name LIKE '%{$params["where_name"]}%' AND cikkszam LIKE '%{$params["where_cikkszam"]}%';";
-        } elseif ($fname && !$fcsz) {
-            $sql .= " WHERE name LIKE '%{$params["where_name"]}%';";
-        } elseif (!$fname && $fcsz) {
-            $sql .= " WHERE cikkszam LIKE '%{$params["where_cikkszam"]}%';";
+        if (isset($params["where"]) && strlen($params["where"]) > 0) {
+            $sql .= " WHERE ".$params["where"];
         }
         return $this->connection->query_array($sql.";");
     }

@@ -9,7 +9,7 @@
         public function get_list($params) {
             $sql = "SELECT * FROM raktar";
             if (isset($params["where"]) && strlen($params["where"]) > 0) {
-                $sql .= " WHERE name LIKE '%{$params["where"]}%'";
+                $sql .= " WHERE ".$params["where"];
             }
             return $this->connection->query_array($sql.";");
         }

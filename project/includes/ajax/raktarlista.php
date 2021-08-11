@@ -26,7 +26,8 @@ $response["htmllist"] = '
 //utána alatta a foreachben cseréld ki az azonosítót meg a raktár nevét $item["valami"]-es változóra
 $params = array();
 if (isset($_POST["filter"])) {
-    $params["where"] = $_POST["filter"];
+//    $params["where"] = $_POST["filter"];
+    $params["where"] = " name LIKE '%".$_POST["filter"]."%'";
 }
 $list = $raktar->get_list($params);
 

@@ -12,25 +12,28 @@
     include("library/class.termek.php");
     $termek = new termek($connection);
 
-if (isset($_GET["event"]) && $_GET["event"] == "modify") {
-    $item_to_modify = $termek->load_item_by_id($_GET["id"]);
-}
-
-if (isset($_POST["event"]) && $_POST["event"] == "save_product") {
-        // todo set back regex check to the more complex, original requirement
-        if (preg_match("/^T\d{1,4}$/", $_POST["cikkszam"])) {
-//        if (preg_match("/^T(19[5-9][0-9]|20[0-9]{2})-\d{4}$/", $_POST["cikkszam"])) {
-            $params = array("id"=>$_POST["id"],"name"=>$_POST["name"], "cikkszam"=>$_POST["cikkszam"], "mertekegyseg_id"=>$_POST["mertekegyseg"]);
-            $termek->save($params);
-            header("location: ?menu=termeklista");
-        } else {
-            $error_message = "A cikkszám nem megfelelő!";
-        }
+    if (isset($_GET["event"]) && $_GET["event"] == "modify") {
+        $item_to_modify = $termek->load_item_by_id($_GET["id"]);
     }
 
-if (isset($_POST["event"]) && $_POST["event"] == "cancel") {
-    header('location: ?menu=termeklista');
-}
+    if (isset($_POST["event"])) {
+        switch ($_POST["event"]) {
+            case "save_product":
+                if (preg_match("/^T(19[5-9][0-9]|20[0-9]{2})-\d{4}$/", $_POST["cikkszam"])) {
+                    $params = array("id" => $_POST["id"], "name" => $_POST["name"], "cikkszam" => $_POST["cikkszam"], "mertekegyseg_id" => $_POST["mertekegyseg"]);
+                    $termek->save($params);
+                    header('location: ?menu=termeklista');
+                } else {
+                    $error_message = "A cikkszám nem megfelelő!";
+                }
+                break;
+            case "cancel":
+                header('location: ?menu=termeklista');
+                break;
+        }
+    }
+    $tmp = $connection->query_array("SELECT * FROM mertekegyseg");
+    $mertekegyseg = array_combine(array_column($tmp, "id"), array_column($tmp, "name"));
 ?>
 
 <h1>Új termék <?php echo isset($item_to_modify) ? "módosítása" : "létrehozása"; ?></h1>
@@ -39,14 +42,14 @@ if (isset($_POST["event"]) && $_POST["event"] == "cancel") {
 <form method="POST" action="?menu=termek">
     <input type="hidden" name="event" id="event" value="save_product">
     <input type="hidden" name="id"
-    <?php echo "value=".(isset($item_to_modify) ? $item_to_modify["id"] : "0"); ?>
+    <?php echo "value='".(isset($item_to_modify) ? $item_to_modify["id"] : "0")."'"; ?>
     >
     Cikkszám: <input type="text" name="cikkszam" placeholder="T2021-0032"
         <?php
             if (isset($error_message)) {
-                echo "value =".$_POST["cikkszam"];
+                echo "value = '".$_POST["cikkszam"]."'";
             } elseif (isset($item_to_modify)) {
-                echo "value =".$item_to_modify["cikkszam"];
+                echo "value = '".$item_to_modify["cikkszam"]."'";
             }
         ?>
     >
@@ -56,43 +59,22 @@ if (isset($_POST["event"]) && $_POST["event"] == "cancel") {
     Név: <input type="text" name="name"
         <?php
             if (isset($error_message)) {
-                echo "value =".$_POST["name"];
+                echo "value = '".$_POST["name"]."'";
             } elseif (isset($item_to_modify)) {
-                echo "value =".$item_to_modify["name"];
+                echo "value = '".$item_to_modify["name"]."'";
             }
         ?>
     >
     <br>
     <br>
     Mértékegység: <select name="mertekegyseg">
-        <option value="1"
-            <?php
-                if (isset($error_message) && $_POST["mertekegyseg"] == 1 || isset($item_to_modify) && $item_to_modify["mertekegyseg_id"] == 1) {
-                    echo "selected";
-                }
-            ?>
-        >db</option>
-        <option value="2"
-            <?php
-            if (isset($error_message) && $_POST["mertekegyseg"] == 2 || isset($item_to_modify) && $item_to_modify["mertekegyseg_id"] == 2) {
-                echo "selected";
-            }
-            ?>
-        >kg</option>
-        <option value="3"
-            <?php
-            if (isset($error_message) && $_POST["mertekegyseg"] == 3 || isset($item_to_modify) && $item_to_modify["mertekegyseg_id"] == 3) {
-                echo "selected";
-            }
-            ?>
-        >l</option>
-        <option value="4"
-            <?php
-            if (isset($error_message) && $_POST["mertekegyseg"] == 4 || isset($item_to_modify) && $item_to_modify["mertekegyseg_id"] == 4) {
-                echo "selected";
-            }
-            ?>
-        >g</option>
+        <?php
+            foreach ($mertekegyseg as $key => $value)
+            echo "<option value='"
+                .$key."' "
+                .(isset($error_message) && $_POST["mertekegyseg"] == $key || isset($item_to_modify) && $item_to_modify["mertekegyseg_id"] == $key ? "selected" : "")
+                .">".$value."</option>";
+        ?>
     </select>
     <br>
     <br>

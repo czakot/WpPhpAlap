@@ -6,7 +6,8 @@
         if(is_file($_FILES["importfile"]["tmp_name"])) {
             $xmlcontent = file_get_contents($_FILES["importfile"]["tmp_name"]);
             $xmlArr = simplexml_load_string($xmlcontent);
-            //$xmlArr = simplexml_load_file($_FILES["importfile"]["tmp_name"]);
+//            $xmlArr = simplexml_load_file($_FILES["importfile"]["tmp_name"]);
+            print_r($xmlArr);
             if(!empty($xmlArr)){
                 foreach($xmlArr->szerzo as $item){
                     $params = array();
